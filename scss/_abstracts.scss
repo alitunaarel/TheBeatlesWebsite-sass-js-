@@ -16,7 +16,6 @@ $light-color: #FEFEFE;
 
 /** UTILITIES **/
 
-
 .bg{
     &-dark{
         background-color: $secondary-color;
@@ -30,4 +29,13 @@ $light-color: #FEFEFE;
     &-2{
         margin-left: 2rem;
     }
+}
+
+/** MIXING **/
+
+@mixin flex-display($display, $align-items, $justif-content) {
+    display:$display;
+    align-items: $align-items;
+    justify-content: $justif-content;
+    
 }
