@@ -12,6 +12,10 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
             integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
             crossorigin="anonymous" />
+        <!-- Owl Carrousel Css -->
+        <link rel="stylesheet" href="./css/owl.carousel.css">
+        <link rel="stylesheet" href="./css/owl.theme.default.css">
+
         <title>The Beatles</title>
     </head>
 
@@ -83,6 +87,77 @@
             </div>
         </header>
 
+        <main role="main">
+            <!--Main Slider-->
+            <div class="main-slider owl-carousel owl-theme">
+                <!--Single Slide-->
+                <div class="single-slide">
+                    <img src="./img/slide_1.jpg" alt="slide_1">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>GAME PORTAL</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque
+                                    accusamus, similique recusandae quam dignissimos distinctio, architecto totam est
+                                    perspiciatis odit sed modi dolore-laborum.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--Single Slide-->
+                <div class="single-slide">
+                    <img src="./img/slide_2.jpg" alt="slide_2">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>GAME PORTAL</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque
+                                    accusamus, similique recusandae quam dignissimos distinctio, architecto totam est
+                                    perspiciatis odit sed modi dolore-laborum.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Single Slide-->
+                <div class="single-slide">
+                    <img src="./img/slide_3.jpg" alt="slide_3">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>GAME PORTAL</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis atque
+                                    accusamus, similique recusandae quam dignissimos distinctio, architecto totam est
+                                    perspiciatis odit sed modi dolore-laborum.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </main>
+
+        <!--JQUERY-->
+        <script src="js/jquery-3.5.1.slim.js"></script>
+        <!--OWL Carousel-->
+        <script src="js/owl.carousel.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                let owl = $(".owl-carousel").owlCarousel({
+                    autoplay: false,
+                    dots: false,
+                    items: 1
+
+                });
+            });
+        </script>
     </body>
 
 </html>
