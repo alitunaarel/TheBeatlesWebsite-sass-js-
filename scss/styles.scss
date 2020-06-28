@@ -1,199 +1,242 @@
 @import 'abstracts';
 @import 'components';
 
-/** General  SETTING **/
+/** GENERAL SETTINGS **/
 
 *,
 *::after,
-*::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 10px;
+html {
+  font-size: 10px;
 }
 
-body{
-    font-family: $secondary-font;
-    color: $gray-color;
-    background-color: $light-color;
+body {
+  font-family: $secondary-font;
+  color: $gray-color;
+  background-color: $light-color;
 }
 
-.container{
-    max-width: 114rem;
-    margin: 0 auto;
-    width: 100%;
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  width: 100%;
 }
 
-a{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: $primary-font;
-    color: $light-color;
+h2 {
+  font-family: $primary-font;
+  font-size: 5rem;
+  color: $light-color;
+  letter-spacing: .5rem;
+  font-weight: 300;
 }
 
-ul{
-    list-style: none;
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $primary-font;
+  color: $light-color;
 }
 
-img{
-    width: 100%;
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/**  TOP HEADER **/
+
+.top-header {
+  border-bottom: 1px solid $primary-color;
+
+  .container {
+    @include flex-display(flex, center, space-between);
+
+    .logo {
+
+      h1 {
+        font-size: 5rem;
+        font-family: $primary-font;
+        color: $primary-color;
+      }
+    }
+
+    .top-social-menu {
+      display: flex;
+
+      li {
+        margin: 0 1rem;
+        padding: 1rem;
+
+        a {
+          font-size: 2rem;
+          transition: all .5s;
+        }
+
+        &:hover a {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .login-area {
+      span {
+        display: none;
+      }
+    }
+  }
 }
 
 
+/**  NAV HEADER **/
 
- /** TOP HEADER **/
+.nav-header {
+  .navbar {
+    @include flex-display(flex, center, space-between);
 
- .top-header{
-     border-bottom: 1px solid $primary-color;
-     .container{
-       @include flex-display(flex,center,space-between);
-         .logo{
-             h1{
-                 font-size: 5rem;
-                 font-family: $primary-font;
-                 color: $primary-color;
-             }
-         }
+    .navbar-list {
+      display: flex;
 
-         .top-social-menu{
-             display: flex;
-             li{
-                 margin: 0 1rem;
-                 padding: 1rem;
+      li {
+        line-height: 8rem;
+        position: relative;
+        transition: all .5s;
 
-                 a{
-                     font-size: 2rem;
-                     transition: all 0.5s;
-                 }
+        .dropdown {
+          position: absolute;
+          background-color: lighten($secondary-color, 10%);
+          width: 150%;
+          left: 50%;
+          z-index: 10;
+          top: 12rem;
+          transition: all .5s;
+          opacity: 0;
+          visibility: hidden;
 
-                 &:hover a {
-                     color: $primary-color;
-                 }
-             }             
-         }
-         .login-area{
-             span {
-                 display: none;
-             }
-         }
-     }
- }
+          li {
+            line-height: 4rem;
+          }
+        }
 
- /** NAV HEADER **/
+        &:hover {
+          background-color: $primary-color;
 
- .nav-header{
-     .navbar{
-        @include flex-display(flex,center,space-between);
+          & .dropdown {
+            opacity: 1;
+            visibility: visible;
+            top: 8rem;
+          }
+        }
+      }
 
-         .navbar-list{
-             display: flex;
+      a {
+        padding: 0 2rem;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+      }
 
-             li{
-                 line-height: 8rem;
-                 position: relative;
-                 transition: all .5s;
+      i {
+        color: $light-color;
+        font-size: 1.6rem;
+        margin-right: 1rem;
+      }
+    }
 
-                 .dropdown{
-                     position: absolute;
-                     background-color: lighten($secondary-color, 10%);
-                     width: 150%;
-                     top:3rem;
-                     left: 50%;
-                     z-index:10;
-                     top:12rem;
-                     transition: all .5s;
-                     opacity: 0;
-                     visibility: hidden;
+    .search-area {
+      input[type="search"], button[type="submit"] {
+        border: none;
+        background-color: transparent;
+        color: $light-color;
+        outline: 0;
+      }
 
-                     li{
-                         line-height: 4rem;
-                     }
-                 }
+      input[type="search"] {
+        border-bottom: 1px solid $primary-color;
+        padding: .5rem;
+      }
 
-                 &:hover{
-                     background-color: $primary-color;
-
-                      & .dropdown{
-                         opacity: 1;
-                         visibility: visible;
-                         top:8rem;
-                     }
-                 }
-             }
-
-             a{
-                 padding: 0 2rem;
-                 font-size: 1.6rem;
-                 letter-spacing: 2px;
-             }
-
-             i{
-                 color: $light-color;
-                 font-size: 1.6rem;
-                 margin-right: 1rem;
-             }
-         }
-
-         .search-area{
-             input[type='search'], button[type='submit']{
-                 border: none;
-                 background-color: transparent;
-                 color: $light-color;
-                 outline: 0;
-             }
-             input[type='search'] {
-                 border-bottom:  1px solid $primary-color;
-                 padding: .5rem;
-                 outline: 0;
-             }
-
-             button[type="submit"]{
-                 margin-left: -5rem; 
-             }
-         }
-
-     }
- }
+      button[type="submit"] {
+        margin-left: -5rem;
+      }
+    }
 
 
- /** MAIN SLIDER **/
-
- .main-slider{
-     .single-slide{
-         position: relative;
-
-         .slide-overlay{
-             position: absolute;
-             top:0;
-             left:0;
-             width: 100%;
-             height: 100%;
-             background: radial-gradient(ellipse at center, rgba(0,0,0, .6) 0%,rgba(0,0,0, .1) 100%);
-
-             .slide-content {
-                 position: absolute;
-                 top: 25%;
-                 width: 80%;
-                 border-top: 2px solid $primary-color; 
-                 border-bottom: 2px solid $primary-color; 
-                 padding: 10rem 7rem;
-                 background: linear-gradient(to right rgba(0,0,0, .6),rgba(0,0,0, .6));
-             }
-         }
-     }
- }
- 
+  }
+}
 
 
+/**  MAIN SLIDER **/
 
+.main-slider {
+  .single-slide {
+    position: relative;
 
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(0,0,0, .5) 0%, rgba(0,0,0, .9) 100%);
 
+      .slide-content {
+        position: absolute;
+        top: 25%;
+        width: 80%;
+        border-top: 2px solid $primary-color;
+        border-bottom: 2px solid $primary-color;
+        padding: 10rem 7rem;
+        background: linear-gradient(to right, rgba(0,0,0, .6), rgba(0,0,0, 1));
 
+        p {
+          font-size: 1.4rem;
+        }
 
+      }
+    }
+  }
+}
 
+/** CUSTOM  OWL CAROUSEL **/
+.owl-theme {
+  position: relative;
 
+  .owl-dots {
+    position: absolute;
+    top: 6rem;
+    right: 10%;
+    z-index: 5;
+    display: flex;
 
+    .owl-dot {
+      display: inline-block;
+      margin-right: 1.3rem;
+      width: 3.3rem;
+      height: 3.3rem;
+      text-align: center;
+      border-radius: 4rem;
+      background-color: transparent;
+      transition: all .5s;
 
+      &.active, &:hover {
+        color: $primary-color;
+
+        span {
+          background-color: transparent;
+        }
+      }
+
+      span {
+        font-size: 2.5rem;
+        font-family: $primary-font;
+        background: transparent;
+      } 
+    }
+  }
+}
